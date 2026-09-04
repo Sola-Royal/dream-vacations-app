@@ -1,7 +1,13 @@
+# Dream Vacations Web App
+
+## Overview
+ This application allows users to create a list of countries they'd like to visit, providing basic information about each country. The project is structured to mimic a real-life production environment, employing best practices in software development, deployment, and continuous integration/continuous delivery (CI/CD).
 # Dream Vacation Destinations
 
-This application allows users to create a list of countries they'd like to visit, providing basic information about each country. The project is structured to mimic a real-life production environment, employing best practices in software development, deployment, and continuous integration/continuous delivery (CI/CD).
-
+   ## Architecture Diagram
+   ![alt text](image.png)
+   
+  ## Setup Instructions (Local)
 ## Setup
 
 ### Backend
@@ -21,7 +27,8 @@ This application allows users to create a list of countries they'd like to visit
 - **View Country Details**: Displays capital, population, and region information for each country.
 - **Remove Countries**: Users can remove countries from their list.
 - **Production-Ready Setup**: The project is designed to be scalable and maintainable, following industry-standard practices for deployment and CI/CD.
-
+ 
+ ## CI/CD
 ## Roadmap
 - **CI/CD Implementation**: Automate the build, test, and deployment process using industry-standard CI/CD tools.
 - **Infrastructure as Code (IaC)**: Implement IaC for automated environment setup and management.
@@ -29,6 +36,7 @@ This application allows users to create a list of countries they'd like to visit
 - **Security**: Utilize Kubernetes Secrets and environment variables for secure data management.
 - **Microservices**: Modularize the application into microservices to improve maintainability and scalability.
 
+   ## Infrastructure
 ## Technologies Used
 - **Frontend**: React
 - **Backend**: Node.js with Express
@@ -42,3 +50,7 @@ This application allows users to create a list of countries they'd like to visit
 - **Environment Management**: Separate configurations for different environments (development, staging, production) using environment variables.
 - **Security**: Sensitive information is managed using environment variables and Kubernetes Secrets.
 - **Documentation**: The project is well-documented to facilitate onboarding and maintenance.
+
+
+## Deployments
+## Live Demo
