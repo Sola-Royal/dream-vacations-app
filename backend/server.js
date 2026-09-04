@@ -14,7 +14,8 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-const COUNTRIES_API_BASE_URL = process.env.COUNTRIES_API_BASE_URL || 'https://restcountries.com/v3.1';
+const COUNTRIES_API_BASE_URL = process.env.COUNTRIES_API_BASE_URL || 'https://api.restcountries.com/countries/v5';
+const COUNTRIES_API_KEY = process.env.COUNTRIES_API_KEY;
 
 app.get('/api/destinations', async (req, res) => {
   try {
@@ -29,12 +30,20 @@ app.get('/api/destinations', async (req, res) => {
 app.post('/api/destinations', async (req, res) => {
   const { country } = req.body;
   try {
-    const response = await axios.get(`${COUNTRIES_API_BASE_URL}/name/${country}`);
-    const countryInfo = response.data[0];
-    
+    const response = await axios.get(
+      `${COUNTRIES_API_BASE_URL}/names.common/${encodeURIComponent(country)}`,
+      { headers: { Authorization: `Bearer ${COUNTRIES_API_KEY}` } }
+    );
+    const countryInfo = response.data.data.objects[0];
+
     const result = await pool.query(
       'INSERT INTO destinations (country, capital, population, region) VALUES ($1, $2, $3, $4) RETURNING *',
-      [country, countryInfo.capital[0], countryInfo.population, countryInfo.region]
+      [
+        countryInfo.names.common,
+        countryInfo.capitals?.[0]?.name || null,
+        countryInfo.population,
+        countryInfo.region,
+      ]
     );
     res.status(201).json(result.rows[0]);
   } catch (err) {
