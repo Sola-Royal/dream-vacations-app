@@ -1,7 +1,9 @@
-name: CD
+name: CI
 on:
   push:
-    branches: [main]
+    branches: [dev]
+  pull_request:
+    branches: [dev, main]
 
 jobs:
   build-and-push:
