@@ -58,7 +58,7 @@
 ## CI/CD Status
 ![CI](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/ci.yml/badge.svg?branch=dev)
 ![CD](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/cd.yml/badge.svg?branch=main)
-
+![alt text](image-10.png)
 
 the vpc provissioned
 ![alt text](image-1.png)
@@ -84,3 +84,6 @@ all my inbound rules
 
 my application live :http://16.16.187.115:3000/
 ![alt text](image-7.png)
+
+Api response in UI
+![alt text](image-8.png)
