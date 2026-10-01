@@ -58,7 +58,7 @@
 ## CI/CD Status
 ![CI](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/ci.yml/badge.svg?branch=dev)
 ![CD](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/cd.yml/badge.svg?branch=main)
-
+![alt text](image-10.png)
 
 the vpc provissioned
 ![alt text](image-1.png)
