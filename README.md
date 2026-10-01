@@ -84,3 +84,6 @@ all my inbound rules
 
 my application live :http://16.16.187.115:3000/
 ![alt text](image-7.png)
+
+Api response in UI
+![alt text](image-8.png)
