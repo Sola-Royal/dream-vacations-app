@@ -58,3 +58,10 @@
 ## CI/CD Status
 ![CI](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/ci.yml/badge.svg?branch=dev)
 ![CD](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/cd.yml/badge.svg?branch=main)
+
+
+the vpc provissioned
+![alt text](image-1.png)
+
+the route 53 : dreamvacations-sola.com
+![alt text](image-2.png)
