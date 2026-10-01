@@ -69,6 +69,20 @@ resource "aws_security_group" "web" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  ingress {
+    description = "Backend API (temporary, for testing)"
+    from_port   = 5000
+    to_port     = 5000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "Frontend (temporary, for testing)"
+    from_port   = 3000
+    to_port     = 3000
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   egress {
     from_port   = 0
     to_port     = 0
@@ -81,4 +95,35 @@ resource "aws_security_group" "web" {
 
 resource "aws_route53_zone" "primary" {
   name = var.domain_name
+}
+
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  owners      = ["099720109477"] # Canonical
+
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+resource "aws_key_pair" "deployer" {
+  key_name   = "dream-vacations-capstone-key"
+  public_key = file("~/.ssh/dream-vacations-capstone.pub")
+}
+
+resource "aws_instance" "app_server" {
+  ami                    = data.aws_ami.ubuntu.id
+  instance_type          = "t3.micro"
+  subnet_id              = aws_subnet.public.id
+  vpc_security_group_ids = [aws_security_group.web.id]
+  key_name               = aws_key_pair.deployer.key_name
+
+  tags = {
+    Name = "dream-vacations-capstone-server"
+  }
 }

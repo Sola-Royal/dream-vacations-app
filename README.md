@@ -58,3 +58,29 @@
 ## CI/CD Status
 ![CI](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/ci.yml/badge.svg?branch=dev)
 ![CD](https://github.com/Sola-Royal/dream-vacations-app/actions/workflows/cd.yml/badge.svg?branch=main)
+
+
+the vpc provissioned
+![alt text](image-1.png)
+
+the route 53 : dreamvacations-sola.com
+![alt text](image-2.png)
+
+
+EC2 lauched from terminal
+![alt text](image-4.png)
+
+ec2 on aws console
+![alt text](image-3.png)
+
+
+ssh in to my ec2
+![alt text](image-5.png)
+
+all my inbound rules
+![alt text](image-6.png)
+
+
+
+my application live :http://16.16.187.115:3000/
+![alt text](image-7.png)
