@@ -127,3 +127,9 @@ resource "aws_instance" "app_server" {
     Name = "dream-vacations-capstone-server"
   }
 }
+
+resource "aws_eip" "app_server" {
+  instance = aws_instance.app_server.id
+  domain   = "vpc"
+  tags = { Name = "dream-vacations-capstone-eip" }
+}
