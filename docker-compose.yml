@@ -26,7 +26,7 @@ services:
     build:
       context: ./frontend
       args:
-        REACT_APP_API_URL: http://16.16.187.115.sslip.io:5000
+        REACT_APP_API_URL: https://16.170.179.141.sslip.io/api
     restart: unless-stopped
     depends_on: [backend]
     ports:
