@@ -204,7 +204,8 @@ systemctl list-timers | grep certbot
 
 ## ssh in to my ec2
 ![alt text](image-5.png)
-
+Application running successfully
+![alt text](image-14.png)
 ## My inbound rules
 ![alt text](image-6.png)
 
@@ -212,4 +213,4 @@ systemctl list-timers | grep certbot
 ![alt text](image-12.png)
 
 ## Api response in UI
-![alt text](image-8.png)
+![alt text](image-13.png)
